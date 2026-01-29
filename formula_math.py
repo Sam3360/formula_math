@@ -1,102 +1,239 @@
-# formula_math.py
 """
-Formula Math Library - Full Starter Version
-Usage:
-import formula_math as fm
-fm.si(1000, 5, 1)
-fm.ci(1000, 5, 2)
-fm.sq_area(5)
-fm.cube_volume(3)
+formula_math.py
+A comprehensive Python library for math, finance, geometry, trigonometry, statistics, physics, and original helpers.
 """
 
 import math
 
+# ------------------ Basic Arithmetic ------------------
+
+def add(*args):
+    """Returns the sum of any number of numbers"""
+    return sum(args)
+
+def sub(a, b):
+    """Subtract b from a"""
+    return a - b
+
+def multiply(*args):
+    """Multiply any number of numbers together"""
+    result = 1
+    for num in args:
+        result *= num
+    return result
+
+def divide(a, b):
+    """Divide a by b"""
+    if b == 0:
+        raise ValueError("Division by zero is not allowed")
+    return a / b
+
+def remainder(a, b):
+    """Remainder of a divided by b"""
+    if b == 0:
+        raise ValueError("Division by zero is not allowed")
+    return a % b
+
+def sqrt(x):
+    """Square root of x"""
+    if x < 0:
+        raise ValueError("Cannot take square root of negative number")
+    return math.sqrt(x)
+
+def solve_expression(expr):
+    """
+    Solves a math expression given as a string.
+    Examples:
+    - '2 + 3 * 4'
+    - '(5^2 + 3) / 4'
+    - 'sqrt(16) + 10'
+    """
+    expr = expr.replace("^", "**")
+    expr = expr.replace("sqrt", "math.sqrt")
+    try:
+        return eval(expr)
+    except Exception as e:
+        return f"Error: {e}"
+
+def smart_calc(*args):
+    """
+    Performs a chain of operations in order:
+    Example: smart_calc(10, '+', 5, '*', 2, '-', 4, '/', 2)
+    """
+    if not args:
+        return 0
+    expr = ""
+    for item in args:
+        expr += str(item)
+    try:
+        return eval(expr)
+    except Exception as e:
+        return f"Error: {e}"
+
+# ------------------ 2D / 3D Geometry ------------------
+
+def sq_perimeter(side):
+    return 4 * side
+
+def rect_area(length, width):
+    return length * width
+
+def cube_volume(side):
+    return side ** 3
+
+def sphere_volume(radius):
+    return (4/3) * math.pi * radius ** 3
+
+def cone_volume(radius, height):
+    return (1/3) * math.pi * radius ** 2 * height
+
+def pyramid_volume(base_length, base_width, height):
+    return (1/3) * base_length * base_width * height
+
+def torus_volume(R, r):
+    return 2 * (math.pi ** 2) * R * r ** 2
+
+def polygon_area_sides(sides, length):
+    angle = math.pi / sides
+    return (sides * length**2) / (4 * math.tan(angle))
+
 # ------------------ Finance ------------------
-def si(x, y, z):
-    """Simple Interest: x=Principal, y=Rate%, z=Time(years)"""
-    return (x*y*z)/100
 
-def ci(x, y, z):
-    """Compound Interest: x=Principal, y=Rate%, z=Time(years)"""
-    return x*((1 + y/100)**z) - x
+def si(principal, rate, time):
+    return principal * rate * time / 100
 
-# ------------------ 2D Geometry ------------------
-def sq_perimeter(x): return 4*x
-def sq_area(x): return x**2
+def ci(principal, rate, time, n=1):
+    return principal * ((1 + rate/(100*n))**(n*time) - 1)
 
-def rect_perimeter(x, y): return 2*(x + y)
-def rect_area(x, y): return x*y
+def time_to_double(principal, rate):
+    return 72 / rate
 
-def circle_area(r): return math.pi*r**2
-def circle_circumference(r): return 2*math.pi*r
-
-def tri_area_base_height(b, h): return 0.5*b*h
-def tri_area_sides(a, b, c):
-    s = (a+b+c)/2
-    return math.sqrt(s*(s-a)*(s-b)*(s-c))
-def tri_perimeter(a, b, c): return a+b+c
-
-# ------------------ 3D Geometry ------------------
-def cube_volume(x): return x**3
-def cube_surface_area(x): return 6*x**2
-
-def cuboid_volume(l, b, h): return l*b*h
-def cuboid_surface_area(l, b, h): return 2*(l*b + b*h + l*h)
-
-def sphere_volume(r): return (4/3)*math.pi*r**3
-def sphere_surface_area(r): return 4*math.pi*r**2
-
-def cylinder_volume(r, h): return math.pi*r**2*h
-def cylinder_surface_area(r, h): return 2*math.pi*r*(r+h)
-
-def cone_volume(r, h): return (1/3)*math.pi*r**2*h
-def cone_surface_area(r, l): return math.pi*r*(r+l)  # l = slant height
-
-def hemisphere_volume(r): return (2/3)*math.pi*r**3
-def hemisphere_surface_area(r): return 3*math.pi*r**2  # including base
+def emi(principal, rate, time):
+    r = rate / (12*100)
+    return (principal * r * ((1+r)**time)) / (((1+r)**time)-1)
 
 # ------------------ Algebra ------------------
-def quad_roots(a, b, c):
-    d = b**2 - 4*a*c
-    if d < 0: return "Complex roots"
-    return ((-b + math.sqrt(d))/(2*a), (-b - math.sqrt(d))/(2*a))
 
-def arithmetic_mean(*args): return sum(args)/len(args)
+def solve_quadratic(a, b, c):
+    disc = b**2 - 4*a*c
+    if disc < 0:
+        return None
+    root1 = (-b + math.sqrt(disc)) / (2*a)
+    root2 = (-b - math.sqrt(disc)) / (2*a)
+    return (root1, root2)
 
-def geometric_mean(*args):
-    product = 1
-    for i in args: product *= i
-    return product ** (1/len(args))
+def linear_solve_2x2(a1, b1, c1, a2, b2, c2):
+    det = a1*b2 - a2*b1
+    if det == 0:
+        return None
+    x = (c1*b2 - c2*b1)/det
+    y = (a1*c2 - a2*c1)/det
+    return (x, y)
 
-# ------------------ Trigonometry (degrees) ------------------
-def sin_deg(x): return math.sin(math.radians(x))
-def cos_deg(x): return math.cos(math.radians(x))
-def tan_deg(x): return math.tan(math.radians(x))
-def cosec_deg(x): return 1/math.sin(math.radians(x))
-def sec_deg(x): return 1/math.cos(math.radians(x))
-def cot_deg(x): return 1/math.tan(math.radians(x))
+# ------------------ Trigonometry ------------------
 
-# ------------------ Physics ------------------
-def speed(d, t): return d/t
-def distance(s, t): return s*t
-def time(d, s): return d/s
-def force(m, a): return m*a
-def weight(m, g=9.8): return m*g
-def kinetic_energy(m, v): return 0.5*m*v**2
-def potential_energy(m, h, g=9.8): return m*g*h
-def work(f, d): return f*d
-def pressure(f, a): return f/a
+def sin_deg(x):
+    return math.sin(math.radians(x))
 
-# ------------------ Misc Math ------------------
-def factorial(x): return math.factorial(x)
+def cos_deg(x):
+    return math.cos(math.radians(x))
 
-def fibonacci(n):
-    fib = [0,1]
-    for i in range(2,n): fib.append(fib[-1]+fib[-2])
-    return fib[:n]
+def heron_area(a, b, c):
+    s = (a+b+c)/2
+    return math.sqrt(s*(s-a)*(s-b)*(s-c))
 
-def nCr(n, r):
+# ------------------ Statistics ------------------
+
+def mean(*args):
+    return sum(args)/len(args)
+
+def median(*args):
+    sorted_args = sorted(args)
+    n = len(sorted_args)
+    mid = n//2
+    if n % 2 == 0:
+        return (sorted_args[mid-1] + sorted_args[mid])/2
+    else:
+        return sorted_args[mid]
+
+def mode(*args):
+    from collections import Counter
+    count = Counter(args)
+    max_count = max(count.values())
+    return [k for k,v in count.items() if v == max_count]
+
+def stdev(*args):
+    m = mean(*args)
+    return math.sqrt(sum((x-m)**2 for x in args)/len(args))
+
+# ------------------ Probability ------------------
+
+def permutations(n, r):
+    return math.factorial(n)//math.factorial(n-r)
+
+def combinations(n, r):
     return math.factorial(n)//(math.factorial(r)*math.factorial(n-r))
 
-def nPr(n, r):
-    return math.factorial(n)//math.factorial(n-r)
+# ------------------ Original / Invented Helpers ------------------
+
+def vector_projection(v1, v2):
+    dot = sum(a*b for a,b in zip(v1,v2))
+    mag_sq = sum(b**2 for b in v2)
+    factor = dot/mag_sq
+    return tuple(factor*b for b in v2)
+
+def distance_2d(x1, y1, x2, y2):
+    return math.sqrt((x2-x1)**2 + (y2-y1)**2)
+
+def distance_3d(x1, y1, z1, x2, y2, z2):
+    return math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2)
+
+def math_trick(x):
+    return x**2 + 42
+
+# ------------------ Physics ------------------
+
+def force(mass, acceleration):
+    return mass * acceleration
+
+def weight(mass, gravity=9.8):
+    return mass * gravity
+
+def work(force, distance, angle_deg=0):
+    return force * distance * math.cos(math.radians(angle_deg))
+
+def kinetic_energy(mass, velocity):
+    return 0.5 * mass * velocity**2
+
+def potential_energy(mass, height, gravity=9.8):
+    return mass * gravity * height
+
+def momentum(mass, velocity):
+    return mass * velocity
+
+def pressure(force, area):
+    return force / area
+
+def density(mass, volume):
+    return mass / volume
+
+def velocity(distance, time):
+    return distance / time
+
+def acceleration(v_final, v_initial, time):
+    return (v_final - v_initial)/time
+
+def grav_force(m1, m2, r):
+    G = 6.67430e-11
+    return G * m1 * m2 / r**2
+
+def ohms_law(voltage, resistance):
+    return voltage / resistance
+
+def electric_power(voltage, current):
+    return voltage * current
+
+def coulombs_law(q1, q2, r):
+    k = 8.9875517923e9
+    return k * q1 * q2 / r**2
+
