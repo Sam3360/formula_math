@@ -1,49 +1,45 @@
 🧮 Formula Math (formula_math)
 
-Formula Math is a comprehensive Python library designed to make math, physics, finance, and geometry formulas instantly accessible in one place. It’s perfect for students, teachers, hobbyists, or developers who want to save time and avoid remembering formulas.
+Formula Math is a comprehensive Python library designed to make math, physics, finance, and geometry formulas instantly accessible. Perfect for students, teachers, and developers to save time and avoid remembering complex equations.
 
 🎯 Target Audience & Benefits
 
 Who is this for?
 
-Students: Simplify homework and verify complex calculations across math and physics.
+Students: Simplify homework and verify calculations.
 
-Educators: Use it as a teaching tool to demonstrate formula applications in Python.
+Educators: Use as a teaching tool for Python applications.
 
-Developers: A lightweight utility for apps requiring quick geometry or finance logic without heavy dependencies.
+Developers: Lightweight utility for quick logic without heavy dependencies.
 
 Why use formula_math?
 
-Save Time: No need to look up constants (like $\pi$ or $g$) or derive formulas from scratch.
+Save Time: No need to look up constants like PI or Gravity.
 
-Accuracy: Built-in logic handles edge cases like complex roots in quadratics.
+Accuracy: Built-in logic handles edge cases automatically.
 
-Readability: Clean, intuitive function names make your code easier for others to understand.
+Readability: Clean and intuitive function names.
 
 🚀 Key Features
 
-Finance: Quick calculations for simple and compound interest.
+Finance: Simple and compound interest.
 
-Geometry: Full support for 2D (Area/Perimeter) and 3D (Volume/Surface Area).
+Geometry: 2D Areas/Perimeters and 3D Volumes/Surface Areas.
 
 Physics: Kinematics, dynamics, energy, and pressure.
 
-Algebra: Solve quadratics and calculate means.
+Algebra: Quadratic roots and various means.
 
-Trigonometry: Intuitive degree-based functions.
+Trigonometry: Degree-based functions.
 
-Miscellaneous: Factorials, Fibonacci, and Combinatorics.
+Misc: Factorials, Fibonacci, and Combinatorics.
 
 📦 Installation
-
-Install the package via pip:
 
 pip install formula_math
 
 
 🛠 Usage
-
-Simply import the library and use the fm alias for a faster workflow:
 
 import formula_math as fm
 
@@ -56,121 +52,85 @@ print(result) # Output: 153.938
 
 1️⃣ Finance Formulas
 
-si(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Calculates Simple Interest.
+si(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Simple Interest.
 
-Example: fm.si(1000, 5, 1) → 50.0
-
-ci(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Calculates Compound Interest.
-
-Example: fm.ci(1000, 5, 2) → 102.5
+ci(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Compound Interest.
 
 2️⃣ 2D Geometry
 
 sq_perimeter(x) – x=side. Perimeter of a square.
 
-Example: fm.sq_perimeter(5) → 20
-
 sq_area(x) – x=side. Area of a square.
-
-Example: fm.sq_area(5) → 25
 
 rect_perimeter(l, b) – l=length, b=breadth. Perimeter of a rectangle.
 
-Example: fm.rect_perimeter(4, 5) → 18
-
 rect_area(l, b) – l=length, b=breadth. Area of a rectangle.
-
-Example: fm.rect_area(4, 5) → 20
 
 circle_area(r) – r=radius. Area of a circle.
 
-Example: fm.circle_area(7) → 153.938
-
 circle_circumference(r) – r=radius. Circumference of a circle.
 
-Example: fm.circle_circumference(7) → 43.982
+tri_area_base_height(b, h) – b=base, h=height. Triangle area.
 
-tri_area_base_height(b, h) – b=base, h=height. Triangle area using base & height.
-
-Example: fm.tri_area_base_height(4, 5) → 10.0
-
-tri_area_sides(a, b, c) – a,b,c=sides. Triangle area using Heron’s formula.
-
-Example: fm.tri_area_sides(3,4,5) → 6.0
+tri_area_sides(a, b, c) – a,b,c=sides. Heron’s formula.
 
 tri_perimeter(a, b, c) – a,b,c=sides. Perimeter of triangle.
 
-Example: fm.tri_perimeter(3,4,5) → 12
-
 3️⃣ 3D Geometry
 
-cube_volume(x) – x=side. Volume of cube.
+cube_volume(x) – x=side.
 
-cube_surface_area(x) – x=side. Surface area of cube.
+cube_surface_area(x) – x=side.
 
-cuboid_volume(l, b, h) – l=length, b=breadth, h=height. Volume of cuboid.
+cuboid_volume(l, b, h) – Volume of cuboid.
 
-cuboid_surface_area(l, b, h) – Surface area of cuboid.
+cuboid_surface_area(l, b, h) – Surface area.
 
-sphere_volume(r) – r=radius. Volume of sphere.
+sphere_volume(r) – Volume of sphere.
 
-sphere_surface_area(r) – r=radius. Surface area of sphere.
+sphere_surface_area(r) – Surface area.
 
-cylinder_volume(r, h) – r=radius, h=height. Volume of cylinder.
+cylinder_volume(r, h) – Volume.
 
-cylinder_surface_area(r, h) – r=radius, h=height. Surface area of cylinder.
+cylinder_surface_area(r, h) – Surface area.
 
-cone_volume(r, h) – r=radius, h=height. Volume of cone.
+cone_volume(r, h) – Volume.
 
-cone_surface_area(r, l) – r=radius, l=slant height. Surface area of cone.
+cone_surface_area(r, l) – Surface area.
 
-hemisphere_volume(r) – r=radius. Volume of hemisphere.
+hemisphere_volume(r) – Volume.
 
-hemisphere_surface_area(r) – r=radius. Surface area including base.
+hemisphere_surface_area(r) – Surface area.
 
 4️⃣ Algebra
 
-quad_roots(a, b, c) – coefficients of $ax^2 + bx + c = 0$. Returns roots (real or complex).
+quad_roots(a, b, c) – Coefficients of $ax^2 + bx + c = 0$.
 
-arithmetic_mean(*args) – Any number of values. Calculates average.
+arithmetic_mean(*args) – Calculates average.
 
-geometric_mean(*args) – Any number of values. Calculates geometric mean.
+geometric_mean(*args) – Calculates geometric mean.
 
 5️⃣ Trigonometry (Degrees)
 
-sin_deg(x) – Sine of angle $x$.
+sin_deg(x), cos_deg(x), tan_deg(x) – Standard trig.
 
-cos_deg(x) – Cosine of angle $x$.
-
-tan_deg(x) – Tangent of angle $x$.
-
-cosec_deg(x), sec_deg(x), cot_deg(x) – Reciprocal trig functions in degrees.
+cosec_deg(x), sec_deg(x), cot_deg(x) – Reciprocal trig.
 
 6️⃣ Physics (Basic)
 
-speed(d, t) – d=distance, t=time.
+speed(d, t), distance(s, t), time(d, s) – Kinematics.
 
-distance(s, t) – s=speed, t=time.
+force(m, a), weight(m, g=9.8) – Dynamics.
 
-time(d, s) – d=distance, s=speed.
+kinetic_energy(m, v), potential_energy(m, h, g=9.8) – Energy.
 
-force(m, a) – m=mass, a=acceleration.
-
-weight(m, g=9.8) – m=mass, g=gravity.
-
-kinetic_energy(m, v) – m=mass, v=velocity.
-
-potential_energy(m, h, g=9.8) – m=mass, h=height.
-
-work(f, d) – f=force, d=distance.
-
-pressure(f, a) – f=force, a=area.
+work(f, d), pressure(f, a) – Work and Pressure.
 
 7️⃣ Miscellaneous
 
-factorial(x) – Calculates $x!$.
+factorial(x) – Factorial $x!$.
 
-fibonacci(n) – Returns first $n$ Fibonacci numbers.
+fibonacci(n) – Fibonacci sequence up to $n$ terms.
 
 nCr(n, r) – Combinations.
 
@@ -178,16 +138,12 @@ nPr(n, r) – Permutations.
 
 📝 Notes
 
-All angles in trigonometry functions are in degrees.
+All trigonometry functions use degrees.
 
-For 3D shapes, input measurements are assumed to be in the same unit.
+Ensure all measurements are in consistent units.
 
-This library is optimized for school and beginner-level college formulas.
-
-🤝 Contributing
-
-Feel free to fork, submit issues, or suggest new formulas! Pull requests are welcome.
+Optimized for school and beginner college levels.
 
 📄 License
 
-MIT License – see LICENSE.txt
+Distributed under the MIT License.
