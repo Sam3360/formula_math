@@ -1,8 +1,8 @@
-🧮 Formula Math (formula_math)
+##🧮 Formula Math (formula_math)
 
 Formula Math is a comprehensive Python library designed to make math, physics, finance, and geometry formulas instantly accessible. Perfect for students, teachers, and developers to save time and avoid remembering complex equations.
 
-🎯 Target Audience & Benefits
+##🎯 Target Audience & Benefits
 
 Who is this for?
 
@@ -20,7 +20,7 @@ Accuracy: Built-in logic handles edge cases automatically.
 
 Readability: Clean and intuitive function names.
 
-🚀 Key Features
+##🚀 Key Features
 
 Finance: Simple and compound interest.
 
@@ -34,12 +34,12 @@ Trigonometry: Degree-based functions.
 
 Misc: Factorials, Fibonacci, and Combinatorics.
 
-📦 Installation
+##📦 Installation
 
-pip install formula_math
+#pip install formula-math
 
 
-🛠 Usage
+##🛠 Usage
 
 import formula_math as fm
 
@@ -48,15 +48,15 @@ result = fm.circle_area(7)
 print(result) # Output: 153.938
 
 
-📚 API Reference
+##📚 API Reference
 
-1️⃣ Finance Formulas
+#1️⃣ Finance Formulas
 
 si(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Simple Interest.
 
 ci(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Compound Interest.
 
-2️⃣ 2D Geometry
+#2️⃣ 2D Geometry
 
 sq_perimeter(x) – x=side. Perimeter of a square.
 
@@ -76,7 +76,7 @@ tri_area_sides(a, b, c) – a,b,c=sides. Heron’s formula.
 
 tri_perimeter(a, b, c) – a,b,c=sides. Perimeter of triangle.
 
-3️⃣ 3D Geometry
+#3️⃣ 3D Geometry
 
 cube_volume(x) – x=side.
 
@@ -102,7 +102,7 @@ hemisphere_volume(r) – Volume.
 
 hemisphere_surface_area(r) – Surface area.
 
-4️⃣ Algebra
+#4️⃣ Algebra
 
 quad_roots(a, b, c) – Coefficients of $ax^2 + bx + c = 0$.
 
@@ -110,13 +110,13 @@ arithmetic_mean(*args) – Calculates average.
 
 geometric_mean(*args) – Calculates geometric mean.
 
-5️⃣ Trigonometry (Degrees)
+#5️⃣ Trigonometry (Degrees)
 
 sin_deg(x), cos_deg(x), tan_deg(x) – Standard trig.
 
 cosec_deg(x), sec_deg(x), cot_deg(x) – Reciprocal trig.
 
-6️⃣ Physics (Basic)
+#6️⃣ Physics (Basic)
 
 speed(d, t), distance(s, t), time(d, s) – Kinematics.
 
@@ -126,7 +126,7 @@ kinetic_energy(m, v), potential_energy(m, h, g=9.8) – Energy.
 
 work(f, d), pressure(f, a) – Work and Pressure.
 
-7️⃣ Miscellaneous
+#7️⃣ Miscellaneous
 
 factorial(x) – Factorial $x!$.
 
@@ -136,7 +136,7 @@ nCr(n, r) – Combinations.
 
 nPr(n, r) – Permutations.
 
-📝 Notes
+##📝 Notes
 
 All trigonometry functions use degrees.
 
@@ -144,6 +144,6 @@ Ensure all measurements are in consistent units.
 
 Optimized for school and beginner college levels.
 
-📄 License
+##📄 License
 
 Distributed under the MIT License.
