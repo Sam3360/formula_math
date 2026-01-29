@@ -147,3 +147,7 @@ Optimized for school and beginner college levels.
 📄 License
 
 Distributed under the MIT License.
+
+
+
+PyPI: https://pypi.org/project/formula-math/
