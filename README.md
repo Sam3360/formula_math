@@ -1,21 +1,38 @@
-# formula_math
 🧮 Formula Math (formula_math)
 
-Formula Math is a comprehensive Python library designed to bring essential math, physics, finance, and geometry formulas directly to your fingertips. Whether you are a student, teacher, or developer, formula_math eliminates the need to look up constants or derive complex equations — just import and solve.
+Formula Math is a comprehensive Python library designed to make math, physics, finance, and geometry formulas instantly accessible in one place. It’s perfect for students, teachers, hobbyists, or developers who want to save time and avoid remembering formulas.
+
+🎯 Target Audience & Benefits
+
+Who is this for?
+
+Students: Simplify homework and verify complex calculations across math and physics.
+
+Educators: Use it as a teaching tool to demonstrate formula applications in Python.
+
+Developers: A lightweight utility for apps requiring quick geometry or finance logic without heavy dependencies.
+
+Why use formula_math?
+
+Save Time: No need to look up constants (like $\pi$ or $g$) or derive formulas from scratch.
+
+Accuracy: Built-in logic handles edge cases like complex roots in quadratics.
+
+Readability: Clean, intuitive function names make your code easier for others to understand.
 
 🚀 Key Features
 
-Finance: Quick calculations for interest and savings.
+Finance: Quick calculations for simple and compound interest.
 
-Geometry: Full support for 2D areas/perimeters and 3D volumes/surface areas.
+Geometry: Full support for 2D (Area/Perimeter) and 3D (Volume/Surface Area).
 
-Physics: Basic kinematics, dynamics, and energy calculations.
+Physics: Kinematics, dynamics, energy, and pressure.
 
-Algebra: Solve quadratics and find means instantly.
+Algebra: Solve quadratics and calculate means.
 
-Trigonometry: Intuitive degree-based calculations.
+Trigonometry: Intuitive degree-based functions.
 
-Combinatorics: Easy access to factorials, permutations, and combinations.
+Miscellaneous: Factorials, Fibonacci, and Combinatorics.
 
 📦 Installation
 
@@ -39,456 +56,138 @@ print(result) # Output: 153.938
 
 1️⃣ Finance Formulas
 
-Function
+si(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Calculates Simple Interest.
 
-Parameters
+Example: fm.si(1000, 5, 1) → 50.0
 
-Description
+ci(p, r, t) – p=Principal, r=Rate %, t=Time (yrs). Calculates Compound Interest.
 
-Example
-
-si(p, r, t)
-
-Principal, Rate(%), Time(yrs)
-
-Simple Interest
-
-fm.si(1000, 5, 1) → 50.0
-
-ci(p, r, t)
-
-Principal, Rate(%), Time(yrs)
-
-Compound Interest
-
-fm.ci(1000, 5, 2) → 102.5
+Example: fm.ci(1000, 5, 2) → 102.5
 
 2️⃣ 2D Geometry
 
-Function
+sq_perimeter(x) – x=side. Perimeter of a square.
 
-Parameters
+Example: fm.sq_perimeter(5) → 20
 
-Description
+sq_area(x) – x=side. Area of a square.
 
-Example
+Example: fm.sq_area(5) → 25
 
-sq_perimeter(s)
+rect_perimeter(l, b) – l=length, b=breadth. Perimeter of a rectangle.
 
-side
+Example: fm.rect_perimeter(4, 5) → 18
 
-Perimeter of a square
+rect_area(l, b) – l=length, b=breadth. Area of a rectangle.
 
-fm.sq_perimeter(5) → 20
+Example: fm.rect_area(4, 5) → 20
 
-sq_area(s)
+circle_area(r) – r=radius. Area of a circle.
 
-side
+Example: fm.circle_area(7) → 153.938
 
-Area of a square
+circle_circumference(r) – r=radius. Circumference of a circle.
 
-fm.sq_area(5) → 25
+Example: fm.circle_circumference(7) → 43.982
 
-rect_perimeter(l, b)
+tri_area_base_height(b, h) – b=base, h=height. Triangle area using base & height.
 
-length, breadth
+Example: fm.tri_area_base_height(4, 5) → 10.0
 
-Perimeter of a rectangle
+tri_area_sides(a, b, c) – a,b,c=sides. Triangle area using Heron’s formula.
 
-fm.rect_perimeter(4, 5) → 18
+Example: fm.tri_area_sides(3,4,5) → 6.0
 
-rect_area(l, b)
+tri_perimeter(a, b, c) – a,b,c=sides. Perimeter of triangle.
 
-length, breadth
-
-Area of a rectangle
-
-fm.rect_area(4, 5) → 20
-
-circle_area(r)
-
-radius
-
-Area of a circle
-
-fm.circle_area(7) → 153.938
-
-circle_circumference(r)
-
-radius
-
-Circumference of a circle
-
-fm.circle_circumference(7) → 43.982
-
-tri_area_base_height(b, h)
-
-base, height
-
-Triangle area (standard)
-
-fm.tri_area_base_height(4, 5) → 10.0
-
-tri_area_sides(a, b, c)
-
-sides a, b, c
-
-Triangle area (Heron’s)
-
-fm.tri_area_sides(3,4,5) → 6.0
-
-tri_perimeter(a, b, c)
-
-sides a, b, c
-
-Perimeter of triangle
-
-fm.tri_perimeter(3,4,5) → 12
+Example: fm.tri_perimeter(3,4,5) → 12
 
 3️⃣ 3D Geometry
 
-Function
+cube_volume(x) – x=side. Volume of cube.
 
-Parameters
+cube_surface_area(x) – x=side. Surface area of cube.
 
-Description
+cuboid_volume(l, b, h) – l=length, b=breadth, h=height. Volume of cuboid.
 
-Example
+cuboid_surface_area(l, b, h) – Surface area of cuboid.
 
-cube_volume(s)
+sphere_volume(r) – r=radius. Volume of sphere.
 
-side
+sphere_surface_area(r) – r=radius. Surface area of sphere.
 
-Volume of cube
+cylinder_volume(r, h) – r=radius, h=height. Volume of cylinder.
 
-fm.cube_volume(3) → 27
+cylinder_surface_area(r, h) – r=radius, h=height. Surface area of cylinder.
 
-cube_surface_area(s)
+cone_volume(r, h) – r=radius, h=height. Volume of cone.
 
-side
+cone_surface_area(r, l) – r=radius, l=slant height. Surface area of cone.
 
-Total surface area of cube
+hemisphere_volume(r) – r=radius. Volume of hemisphere.
 
-fm.cube_surface_area(3) → 54
-
-cuboid_volume(l, b, h)
-
-length, breadth, height
-
-Volume of cuboid
-
-fm.cuboid_volume(2,3,4) → 24
-
-cuboid_surface_area(l,b,h)
-
-length, breadth, height
-
-Surface area of cuboid
-
-fm.cuboid_surface_area(2,3,4) → 52
-
-sphere_volume(r)
-
-radius
-
-Volume of sphere
-
-fm.sphere_volume(3) → 113.097
-
-sphere_surface_area(r)
-
-radius
-
-Surface area of sphere
-
-fm.sphere_surface_area(3) → 113.097
-
-cylinder_volume(r, h)
-
-radius, height
-
-Volume of cylinder
-
-fm.cylinder_volume(3,5) → 141.372
-
-cylinder_surface_area(r,h)
-
-radius, height
-
-Surface area of cylinder
-
-fm.cylinder_surface_area(3,5) → 150.796
-
-cone_volume(r, h)
-
-radius, height
-
-Volume of cone
-
-fm.cone_volume(3,5) → 47.123
-
-cone_surface_area(r, l)
-
-radius, slant height
-
-Surface area of cone
-
-fm.cone_surface_area(3,5) → 75.398
-
-hemisphere_volume(r)
-
-radius
-
-Volume of hemisphere
-
-fm.hemisphere_volume(3) → 56.548
-
-hemisphere_surface_area(r)
-
-radius
-
-Total surface area
-
-fm.hemisphere_surface_area(3) → 84.823
+hemisphere_surface_area(r) – r=radius. Surface area including base.
 
 4️⃣ Algebra
 
-Function
+quad_roots(a, b, c) – coefficients of $ax^2 + bx + c = 0$. Returns roots (real or complex).
 
-Parameters
+arithmetic_mean(*args) – Any number of values. Calculates average.
 
-Description
-
-Example
-
-quad_roots(a, b, c)
-
-coefficients ($ax^2+bx+c=0$)
-
-Real or Complex roots
-
-fm.quad_roots(1,-3,2) → (2.0,1.0)
-
-arithmetic_mean(*args)
-
-numbers
-
-Average (Mean)
-
-fm.arithmetic_mean(2,4,6) → 4.0
-
-geometric_mean(*args)
-
-numbers
-
-Geometric Mean
-
-fm.geometric_mean(2,8) → 4.0
+geometric_mean(*args) – Any number of values. Calculates geometric mean.
 
 5️⃣ Trigonometry (Degrees)
 
-Function
+sin_deg(x) – Sine of angle $x$.
 
-Parameters
+cos_deg(x) – Cosine of angle $x$.
 
-Description
+tan_deg(x) – Tangent of angle $x$.
 
-Example
-
-sin_deg(x)
-
-angle in degrees
-
-Sine of angle
-
-fm.sin_deg(30) → 0.5
-
-cos_deg(x)
-
-angle in degrees
-
-Cosine of angle
-
-fm.cos_deg(60) → 0.5
-
-tan_deg(x)
-
-angle in degrees
-
-Tangent of angle
-
-fm.tan_deg(45) → 1.0
-
-cosec_deg(x)
-
-angle in degrees
-
-Cosecant of angle
-
-fm.cosec_deg(30) → 2.0
-
-sec_deg(x)
-
-angle in degrees
-
-Secant of angle
-
-fm.sec_deg(60) → 2.0
-
-cot_deg(x)
-
-angle in degrees
-
-Cotangent of angle
-
-fm.cot_deg(45) → 1.0
+cosec_deg(x), sec_deg(x), cot_deg(x) – Reciprocal trig functions in degrees.
 
 6️⃣ Physics (Basic)
 
-Function
+speed(d, t) – d=distance, t=time.
 
-Parameters
+distance(s, t) – s=speed, t=time.
 
-Description
+time(d, s) – d=distance, s=speed.
 
-Example
+force(m, a) – m=mass, a=acceleration.
 
-speed(d, t)
+weight(m, g=9.8) – m=mass, g=gravity.
 
-distance, time
+kinetic_energy(m, v) – m=mass, v=velocity.
 
-Speed calculation
+potential_energy(m, h, g=9.8) – m=mass, h=height.
 
-fm.speed(100,5) → 20.0
+work(f, d) – f=force, d=distance.
 
-distance(s, t)
-
-speed, time
-
-Distance calculation
-
-fm.distance(20,5) → 100
-
-time(d, s)
-
-distance, speed
-
-Time calculation
-
-fm.time(100,20) → 5.0
-
-force(m, a)
-
-mass, acceleration
-
-Force ($F = ma$)
-
-fm.force(10,9.8) → 98.0
-
-weight(m, g=9.8)
-
-mass, gravity
-
-Weight
-
-fm.weight(10) → 98.0
-
-kinetic_energy(m, v)
-
-mass, velocity
-
-Kinetic Energy ($\frac{1}{2}mv^2$)
-
-fm.kinetic_energy(10,5) → 125.0
-
-potential_energy(m,h,g=9.8)
-
-mass, height, gravity
-
-Potential Energy ($mgh$)
-
-fm.potential_energy(10,5) → 490.0
-
-work(f, d)
-
-force, distance
-
-Work Done ($W = Fd$)
-
-fm.work(10,5) → 50
-
-pressure(f, a)
-
-force, area
-
-Pressure ($P = F/A$)
-
-fm.pressure(100,5) → 20.0
+pressure(f, a) – f=force, a=area.
 
 7️⃣ Miscellaneous
 
-Function
+factorial(x) – Calculates $x!$.
 
-Parameters
+fibonacci(n) – Returns first $n$ Fibonacci numbers.
 
-Description
+nCr(n, r) – Combinations.
 
-Example
-
-factorial(x)
-
-integer
-
-Factorial ($n!$)
-
-fm.factorial(5) → 120
-
-fibonacci(n)
-
-number of terms
-
-Fibonacci sequence
-
-fm.fibonacci(7) → [0,1,1,2,3,5,8]
-
-nCr(n, r)
-
-total, selected
-
-Combinations
-
-fm.nCr(5,2) → 10
-
-nPr(n, r)
-
-total, selected
-
-Permutations
-
-fm.nPr(5,2) → 20
+nPr(n, r) – Permutations.
 
 📝 Notes
 
-Trigonometry: All trig functions use degrees for ease of use in educational contexts.
+All angles in trigonometry functions are in degrees.
 
-Units: Ensure all inputs for geometry and physics are in consistent units (e.g., all meters or all centimeters).
+For 3D shapes, input measurements are assumed to be in the same unit.
 
-Target Audience: This library is optimized for K-12 students and introductory college-level calculations.
+This library is optimized for school and beginner-level college formulas.
 
 🤝 Contributing
 
-Contributions make the open-source community an amazing place!
-
-Fork the project.
-
-Create your feature branch (git checkout -b feature/NewFormula).
-
-Commit your changes (git commit -m 'Add some NewFormula').
-
-Push to the branch (git push origin feature/NewFormula).
-
-Open a Pull Request.
+Feel free to fork, submit issues, or suggest new formulas! Pull requests are welcome.
 
 📄 License
 
-Distributed under the MIT License. See LICENSE.txt for more information.
+MIT License – see LICENSE.txt
