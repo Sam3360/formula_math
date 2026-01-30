@@ -4,7 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "formula-math"
-version = "13.5.12"
+version = "14.0.0"
 description = "Math formulas as Python functions"
 readme = "README.md"
 authors = [{ name="Samarth Chugh" }]
+
