@@ -4,9 +4,12 @@ I made this cause I always struggled with keeping up with formulas and rememberi
 This is a beginner-friendly Python library for math, finance, geometry, trigonometry, statistics, physics, and original helpers.
 No need to memorize formulas — just call the function with your values and get results instantly.
 
-## Installation
-
-# pip install formula-math
+## Install / Download
+You can install the latest version of **formula-math** directly from PyPI using pip:
+```bash
+pip install formula-math
+```
+Or visit the PyPI page to see all versions and details: [formula-math on PyPI](https://pypi.org/project/formula-math/)
 
 ## Usage
 
