@@ -18,7 +18,8 @@ fm.sub(20,5,3)                # Multi-number subtraction
 fm.multiply(2,3,5)            # Multi-number multiplication
 fm.divide(100,2,5)            # Multi-number division
 fm.remainder(10,3)            # Remainder
-fm.sqrt(25)
+fm.sqrt(25)                   #Square Root
+fm.cbrt(8)                    #Cube Root
 fm.per(20,30,50)              # Percentages of numbers
 fm.solve_expression("2 + 3 * 4")
 fm.smart_calc(10,'+',5,'*',2)
@@ -142,6 +143,15 @@ Example: fm.per(20,30,50)  # Returns [20.0, 30.0, 50.0]
 Smart Math
 fm.solve_expression("2 + 3 * 4")
 fm.smart_calc(10,'+',5,'*',2)
+
+Square Root
+fm.sqrt(x)
+Example: fm.sqrt(9) # Resturns 3.0
+
+Cube Root
+fm.cbrt(x)
+Example: fm.cbrt(8) # Resturns 2.0
+
 
 ## Notes
 - Multi-number arithmetic is supported in add, sub, multiply, divide.
