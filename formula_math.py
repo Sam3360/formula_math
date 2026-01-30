@@ -13,6 +13,11 @@ import math
 import random
 from collections import Counter
 
+# ------------------ sqr and cube roots ------------------
+
+def sqrt(x): return math.sqrt(x)
+def cbrt(x): return x**(1/3)
+
 # ------------------ Finance ------------------
 def si(x, y, z):
     """Simple Interest: x=Principal, y=Rate%, z=Time(years)"""
@@ -88,6 +93,18 @@ def kinetic_energy(m, v): return 0.5*m*v**2
 def potential_energy(m, h, g=9.8): return m*g*h
 def work(f, d): return f*d
 def pressure(f, a): return f/a
+def momentum(m, v): return m*v
+def velocity(d, t): return d/t
+def acceleration(v, u, t): return (v - u)/t
+def power(w, t): return w/t
+def density(m, v): return m/v
+def frequency(t): return 1/t
+def wavelength(v, f): return v/f
+def wave_speed(f, l): return f*l
+def grav_force(m1, m2, r, G=6.67430e-11): return G*m1*m2/(r**2)
+def ohms_law(v, r): return v/r
+def electric_power(v, i): return v*i
+def coulombs_law(q1, q2, r, k=8.9875517923e9): return k*q1*q2/r**2
 
 # ------------------ Misc Math ------------------
 def factorial(x): return math.factorial(x)
