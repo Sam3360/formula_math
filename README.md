@@ -6,7 +6,7 @@ No need to memorize formulas — just call the function with your values and get
 
 ## Installation
 
-pip install formula-math
+# pip install formula-math
 
 ## Usage
 
